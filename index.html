@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>The Dwelling Word</title>
-		<style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The Dwelling Word</title>
+    <style>
     * {
       margin: 0;
       padding: 0;
@@ -18,23 +18,20 @@
       background-color: #f9f9f9;
     }
 
-    /* Hero section with image tag */
+    /* Hero section – full width, no side cropping, auto height */
     .hero {
       position: relative;
-      height: 70vh;
-      min-height: 400px;
-      overflow: hidden;           /* Ensures the image doesn't overflow */
+      width: 100%;
+      overflow: hidden;
+      background-color: #f0f0f0;     /* Fallback color while image loads or if edges are transparent */
     }
 
     .hero-image {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
-      height: 100%;
-      object-fit: cover;          /* Similar to background-size: cover */
-      object-position: center;    /* Default: center — change here or in media queries */
-      z-index: 1;
+      height: auto;
+      display: block;
+      object-fit: contain;           /* Ensures full image is visible – no cropping */
+      object-position: center;
     }
 
     /* Logo at top-left */
@@ -46,18 +43,19 @@
     }
 
     .logo-container img {
-      max-width: 800px;
+      max-width: 110px;
       height: auto;
       display: block;
     }
 
-    /* Optional light overlay for text readability */
+    /* Optional light overlay for better text readability if you add text over image later */
     .hero::after {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.15);
-      z-index: 2;                 /* Above image but below logo */
+      background: rgba(0, 0, 0, 0.12);   /* Very subtle – increase to 0.2–0.3 if needed */
+      z-index: 2;
+      pointer-events: none;
     }
 
     /* Content below hero */
@@ -80,17 +78,8 @@
       margin-bottom: 1.8rem;
     }
 
-    /* Mobile adjustments — tweak these values based on your actual Cover.png */
+    /* Mobile adjustments – mostly for logo sizing and content spacing */
     @media (max-width: 768px) {
-      .hero {
-        height: 40vh;               /* Shorter on tablets/phones → less side cropping */
-        min-height: 320px;
-      }
-
-      .hero-image {
-        object-position: center 30%; /* Pulls view down a bit — try 20%, 40%, top, bottom, etc. */
-      }
-
       .logo-container {
         left: 20px;
         top: 20px;
@@ -105,35 +94,31 @@
       }
     }
 
-    /* Extra-fine tuning for small phones (e.g. iPhone SE / portrait) */
     @media (max-width: 480px) {
-      .hero {
-        height: 25vh;               /* Even shorter for narrow/tall screens */
-      }
-      .hero-image {
-        object-position: center 35%; /* Adjust this percentage to show the best part of your image */
+      .logo-container img {
+        max-width: 80px;
       }
     }
   </style>
-	</head>
-	<body>
-		
-		<section class="hero">
-			<img 
-				src="Cover.png" 
-				alt="The Dwelling Word cover image" 
-				class="hero-image"
-				>
-				<div class="logo-container">
-					<img src="Logo.png" alt="The Dwelling Word Logo">
-				</div>
-		</section>
-		
-		<section class="content">
-			<h1>Welcome</h1>
-			<p>The Dwelling Word is that scripture that abides so richly within us, so deeply and continually, that it captivates our minds and our hearts in every aspect of life. It is that word within us that informs every thought toward Christ, stirs up every affection toward Christ, and drives our will such that every word and every action seeks to glorify Christ.</p>
-			<p>TheDwellingWord.org is a collection of projects and initiatives to inspire, encourage, motivate, and teach God's people to know God deeply through knowing God's word richly. We hope you are blessed by the resources that you find here.</p>
-		</section>
-		
-	</body>
+  </head>
+  <body>
+    
+    <section class="hero">
+      <img 
+        src="Cover.png" 
+        alt="The Dwelling Word cover image" 
+        class="hero-image"
+      >
+      <div class="logo-container">
+        <img src="Logo.png" alt="The Dwelling Word Logo">
+      </div>
+    </section>
+    
+    <section class="content">
+      <h1>Welcome</h1>
+      <p>The Dwelling Word is that scripture that abides so richly within us, so deeply and continually, that it captivates our minds and our hearts in every aspect of life. It is that word within us that informs every thought toward Christ, stirs up every affection toward Christ, and drives our will such that every word and every action seeks to glorify Christ.</p>
+      <p>TheDwellingWord.org is a collection of projects and initiatives to inspire, encourage, motivate, and teach God's people to know God deeply through knowing God's word richly. We hope you are blessed by the resources that you find here.</p>
+    </section>
+    
+  </body>
 </html>
