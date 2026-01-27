@@ -18,53 +18,61 @@
       background-color: #f9f9f9;
     }
 
-    /* Full-width cover / hero section */
+    /* Hero section with image tag */
     .hero {
       position: relative;
       height: 70vh;
       min-height: 400px;
-      background-image: url('Cover.png'); /* ← Replace with YOUR cover photo URL */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      overflow: hidden;           /* Ensures the image doesn't overflow */
+    }
+
+    .hero-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;          /* Similar to background-size: cover */
+      object-position: center;    /* Default: center — change here or in media queries */
+      z-index: 1;
     }
 
     /* Logo at top-left */
     .logo-container {
       position: absolute;
       top: 25px;
-      left: 30px;              /* distance from left edge */
+      left: 30px;
       z-index: 10;
     }
 
     .logo-container img {
-      max-width: 110px;        /* ≈ half the previous size — adjust as needed */
+      max-width: 110px;
       height: auto;
       display: block;
     }
 
-    /* Light overlay for readability (optional — remove if not wanted) */
+    /* Optional light overlay for text readability */
     .hero::after {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 0, 0, 0.15);
-      z-index: 1;
+      z-index: 2;                 /* Above image but below logo */
     }
 
-    /* Content below hero — centred block, left-aligned text */
+    /* Content below hero */
     .content {
       max-width: 900px;
       margin: 0 auto;
       padding: 60px 20px;
-      text-align: left;        /* ensures paragraphs are left-justified */
+      text-align: left;
     }
 
     .content h1 {
       font-size: 2.2rem;
       margin-bottom: 1.5rem;
       color: #222;
-      text-align: center;      /* heading stays centred */
+      text-align: center;
     }
 
     .content p {
@@ -72,20 +80,38 @@
       margin-bottom: 1.8rem;
     }
 
+    /* Mobile adjustments — tweak these values based on your actual Cover.png */
     @media (max-width: 768px) {
       .hero {
-        height: 60vh;
-        min-height: 350px;
+        height: 50vh;               /* Shorter on tablets/phones → less side cropping */
+        min-height: 320px;
       }
+
+      .hero-image {
+        object-position: center 30%; /* Pulls view down a bit — try 20%, 40%, top, bottom, etc. */
+      }
+
       .logo-container {
         left: 20px;
         top: 20px;
       }
+
       .logo-container img {
-        max-width: 90px;       /* even smaller on mobile if desired */
+        max-width: 90px;
       }
+
       .content {
-        padding: 40px 20px;
+        padding: 40px 20px 60px;
+      }
+    }
+
+    /* Extra-fine tuning for small phones (e.g. iPhone SE / portrait) */
+    @media (max-width: 480px) {
+      .hero {
+        height: 45vh;               /* Even shorter for narrow/tall screens */
+      }
+      .hero-image {
+        object-position: center 35%; /* Adjust this percentage to show the best part of your image */
       }
     }
   </style>
@@ -93,9 +119,14 @@
 	<body>
 		
 		<section class="hero">
-			<div class="logo-container">
-				<img src="Logo.png" alt="Your Logo"> <!-- ← Replace with YOUR logo URL -->
-			</div>
+			<img 
+				src="Cover.png" 
+				alt="The Dwelling Word cover image" 
+				class="hero-image"
+				>
+				<div class="logo-container">
+					<img src="Logo.png" alt="The Dwelling Word Logo">
+				</div>
 		</section>
 		
 		<section class="content">
