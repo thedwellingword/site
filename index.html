@@ -21,52 +21,50 @@
     /* Full-width cover / hero section */
     .hero {
       position: relative;
-      height: 70vh;          /* Adjust this percentage to make the cover taller/shorter */
-      min-height: 400px;     /* Minimum height on small screens */
-      background-image: url('Cover.png'); /* ← Replace with YOUR cover photo URL */
+      height: 70vh;
+      min-height: 400px;
+      background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=2000'); /* ← Replace with YOUR cover photo URL */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
 
-    /* Logo at the top */
+    /* Logo at top-left */
     .logo-container {
       position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
+      top: 25px;
+      left: 30px;              /* distance from left edge */
       z-index: 10;
-      text-align: center;
     }
 
     .logo-container img {
-      max-width: 220px;       /* Adjust logo size as needed */
+      max-width: 110px;        /* ≈ half the previous size — adjust as needed */
       height: auto;
       display: block;
-      margin: 0 auto 10px;
     }
 
-    /* Optional: semi-transparent overlay for better text readability if needed later */
+    /* Light overlay for readability (optional — remove if not wanted) */
     .hero::after {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.15); /* light overlay — change 0.15 or remove */
+      background: rgba(0, 0, 0, 0.15);
       z-index: 1;
     }
 
-    /* Content below the hero */
+    /* Content below hero — centred block, left-aligned text */
     .content {
       max-width: 900px;
       margin: 0 auto;
       padding: 60px 20px;
-      text-align: center;
+      text-align: left;        /* ensures paragraphs are left-justified */
     }
 
     .content h1 {
       font-size: 2.2rem;
       margin-bottom: 1.5rem;
       color: #222;
+      text-align: center;      /* heading stays centred */
     }
 
     .content p {
@@ -79,11 +77,15 @@
         height: 60vh;
         min-height: 350px;
       }
+      .logo-container {
+        left: 20px;
+        top: 20px;
+      }
       .logo-container img {
-        max-width: 180px;
+        max-width: 90px;       /* even smaller on mobile if desired */
       }
       .content {
-        padding: 40px 15px;
+        padding: 40px 20px;
       }
     }
   </style>
@@ -92,13 +94,14 @@
 		
 		<section class="hero">
 			<div class="logo-container">
-				<img src="Logo.png" alt="Your Logo"> <!-- ← Replace with YOUR logo URL -->
+				<img src="https://via.placeholder.com/220x80/333/fff?text=Your+Logo" alt="Your Logo"> <!-- ← Replace with YOUR logo URL -->
 			</div>
 		</section>
 		
 		<section class="content">
-			<p>This is your temporary landing page. We're working on the full site right now and will have something beautiful ready soon. Thank you for your patience!</p>
-			<p>In the meantime, feel free to reach out if you have any questions. We're excited to share more with you shortly.</p>
+			<h1>Welcome</h1>
+			<p>The Dwelling Word is that scripture that abides so richly within us, so deeply and continually, that it captivates our minds and our hearts in every aspect of life. It is that word within us that informs every thought toward Christ, stirs up every affection toward Christ, and drives our will such that every word and every action seeks to glorify Christ.</p>
+			<p>TheDwellingWord.org is a collection of projects and initiatives to inspire, encourage, motivate, and teach God's people to know God deeply through knowing God's word richly. We hope you are blessed by the resources that you find here.</p>
 		</section>
 		
 	</body>
