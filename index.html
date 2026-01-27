@@ -1,242 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Your Site Name</title>
+		<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+    }
 
-	<title>The Dwelling Word</title>
-	<meta name="HandheldFriendly" content="True" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    /* Full-width cover / hero section */
+    .hero {
+      position: relative;
+      height: 70vh;          /* Adjust this percentage to make the cover taller/shorter */
+      min-height: 400px;     /* Minimum height on small screens */
+      background-image: url('Cover.png'); /* ← Replace with YOUR cover photo URL */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
 
-	<link rel="stylesheet" type="text/css" href="https://www.thedwellingword.org/assets/css/style.css?v=107472239f" />
+    /* Logo at the top */
+    .logo-container {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      text-align: center;
+    }
 
-	<script>
-			var siteUrl = 'https://www.thedwellingword.org';
-	</script>
+    .logo-container img {
+      max-width: 220px;       /* Adjust logo size as needed */
+      height: auto;
+      display: block;
+      margin: 0 auto 10px;
+    }
 
-	<script>
-		var localTheme = localStorage.getItem('attila_theme');
-		switch (localTheme) {
-			case 'dark':
-				document.documentElement.classList.add('theme-dark');
-				break;
-			case 'light':
-				document.documentElement.classList.add('theme-light');
-				break;
-			default:
-				document.documentElement.classList.remove('theme-dark', 'theme-light');
-				break;
-		}
-	</script>
+    /* Optional: semi-transparent overlay for better text readability if needed later */
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.15); /* light overlay — change 0.15 or remove */
+      z-index: 1;
+    }
 
+    /* Content below the hero */
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
 
+    .content h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: #222;
+    }
 
-			<style>
-				.theme-dark:root {
-					--ghost-accent-color: #D1603D;
-				}
-				@media (prefers-color-scheme: dark) {
-					html:not(.theme-light):root {
-						--ghost-accent-color: #D1603D;
-					}
-				}
-			</style>
+    .content p {
+      font-size: 1.1rem;
+      margin-bottom: 1.8rem;
+    }
 
-	<meta name="description" content="The Dwelling Word is that scripture that abides so richly within us, so deeply and continually, that it captivates our minds and our hearts in every aspect of life.">
-    <link rel="icon" href="https://www.thedwellingword.org/content/images/size/w256h256/2026/01/Logo-Dark.png" type="image/png">
-    <link rel="canonical" href="https://www.thedwellingword.org/">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    
-    <meta property="og:site_name" content="The Dwelling Word">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="The Dwelling Word">
-    <meta property="og:description" content="The Dwelling Word is that scripture that abides so richly within us, so deeply and continually, that it captivates our minds and our hearts in every aspect of life.">
-    <meta property="og:url" content="https://www.thedwellingword.org/">
-    <meta property="og:image" content="https://www.thedwellingword.org/content/images/size/w1200/2026/01/Cover3-4.png">
-    <meta property="article:modified_time" content="2026-01-17T21:21:39.000Z">
-    <meta property="article:publisher" content="https://www.facebook.com/TheDwellingWord/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The Dwelling Word">
-    <meta name="twitter:description" content="The Dwelling Word is that scripture that abides so richly within us, so deeply and continually, that it captivates our minds and our hearts in every aspect of life.">
-    <meta name="twitter:url" content="https://www.thedwellingword.org/">
-    <meta name="twitter:image" content="https://www.thedwellingword.org/content/images/size/w1200/2026/01/Cover3-4.png">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Jonathan Bradford">
-    <meta name="twitter:site" content="@TheDwellingWord">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="360">
-    
-    <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "publisher": {
-        "@type": "Organization",
-        "name": "The Dwelling Word",
-        "url": "https://www.thedwellingword.org/",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.thedwellingword.org/content/images/2026/01/Logo-Dark-1.png",
-            "width": 60,
-            "height": 60
-        }
-    },
-    "author": {
-        "@type": "Person",
-        "name": "Jonathan Bradford",
-        "sameAs": [
-            "http://www.thedwellingword.org"
-        ]
-    },
-    "headline": "The Dwelling Word",
-    "url": "https://www.thedwellingword.org/",
-    "dateModified": "2026-01-17T21:21:39.000Z",
-    "description": "The Dwelling Word is that scripture that abides so richly within us, so deeply and continually, that it captivates our minds and our hearts in every aspect of life. It is that word within us that informs every thought toward Christ, stirs up every affection toward Christ, and drives our will such that every word and every action seeks to glorify Christ.\n\nTheDwellingWord.org is a collection of projects and initiatives to inspire, encourage, motivate, and teach God&#x27;s people to know God deeply thro",
-    "mainEntityOfPage": "https://www.thedwellingword.org/"
-}
-    </script>
-
-    <meta name="generator" content="Ghost 6.14">
-    <link rel="alternate" type="application/rss+xml" title="The Dwelling Word" href="https://www.thedwellingword.org/blog/rss/">
-    
-    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.8/umd/sodo-search.min.js" data-key="4216f1d563fd373059af6d4ec8" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.8/umd/main.css" data-sodo-search="https://the-dwelling-word.ghost.io/" data-locale="en" crossorigin="anonymous"></script>
-    
-    <link href="https://www.thedwellingword.org/webmentions/receive/" rel="webmention">
-    <script defer src="/public/cards.min.js?v=107472239f"></script>
-    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=107472239f">
-    <script defer src="/public/ghost-stats.min.js?v=107472239f" data-stringify-payload="false" data-datasource="analytics_events" data-storage="localStorage" data-host="https://www.thedwellingword.org/.ghost/analytics/api/v1/page_hit"  tb_site_uuid="6a91c974-7f98-4318-a06c-f957fe4e6caf" tb_post_uuid="029f5a76-4b95-469d-8c19-5e2c3000806e" tb_post_type="page" tb_member_uuid="undefined" tb_member_status="undefined"></script><style>:root {--ghost-accent-color: #3F7CAC;}</style>
-    <style>
-    .post-title { display: none !important; }
-</style>
-</head>
-
-<body class="home-template">
-
-	<div class="viewport">
-		<div class="nav-header">
-			<nav class="nav-wrapper" aria-label="Main">
-					<span class="logo">
-						<a href="https://www.thedwellingword.org" title="Home"><img src="https://www.thedwellingword.org/content/images/2026/01/Logo-Light.png" alt="Logo" /></a>
-					</span>
-				<ul>
-		<li class="nav-home active"><a href="https://www.thedwellingword.org/"><span>Home</span></a></li>
-</ul>
-
-				<a class="nav-search" title="Search" aria-label="Search" data-ghost-search><i class="icon icon-search" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M16.2148 18.3361C14.7436 19.3838 12.9437 20 11 20C6.02944 20 2 15.9706 2 11C2 6.02944 6.02944 2 11 2C15.9706 2 20 6.02944 20 11C20 12.9437 19.3838 14.7436 18.3361 16.2148L23.1213 21L21 23.1213L16.2148 18.3361ZM11 17.25C14.4518 17.25 17.25 14.4518 17.25 11C17.25 7.54822 14.4518 4.75 11 4.75C7.54822 4.75 4.75 7.54822 4.75 11C4.75 14.4518 7.54822 17.25 11 17.25Z" fill="currentColor"/>
-</svg>
-</i></a>
-			</nav>
-
-			<div class="nav-wrapper-control">
-				<div class="inner">
-					<a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 19H22.5V17H1.5V19ZM1.5 13H22.5V11H1.5V13ZM1.5 5V7H22.5V5H1.5Z" fill="currentColor"/>
-</svg>
-</i> Menu</a>
-					<a class="nav-search" title="Search" aria-label="Search" role="button" data-ghost-search><i class="icon icon-search" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M16.2148 18.3361C14.7436 19.3838 12.9437 20 11 20C6.02944 20 2 15.9706 2 11C2 6.02944 6.02944 2 11 2C15.9706 2 20 6.02944 20 11C20 12.9437 19.3838 14.7436 18.3361 16.2148L23.1213 21L21 23.1213L16.2148 18.3361ZM11 17.25C14.4518 17.25 17.25 14.4518 17.25 11C17.25 7.54822 14.4518 4.75 11 4.75C7.54822 4.75 4.75 7.54822 4.75 11C4.75 14.4518 7.54822 17.25 11 17.25Z" fill="currentColor"/>
-</svg>
-</i></a>
-				</div>
+    @media (max-width: 768px) {
+      .hero {
+        height: 60vh;
+        min-height: 350px;
+      }
+      .logo-container img {
+        max-width: 180px;
+      }
+      .content {
+        padding: 40px 15px;
+      }
+    }
+  </style>
+	</head>
+	<body>
+		
+		<section class="hero">
+			<div class="logo-container">
+				<img src="Logo.png" alt="Your Logo"> <!-- ← Replace with YOUR logo URL -->
 			</div>
-		</div>
-		<div class="nav-close" role="button" aria-label="Close"></div>
-
-		<section class="page-wrapper">
-
-			
-
-	<header class="post-header  has-cover ">
-		<div class="inner">
-			<h1 class="post-title">Home</h1>
-			<div class="post-cover cover">
-				<img				src="Cover.png"
-				alt="Home" />
-			</div>
-		</div>
-	</header>
-
-<main class="content" role="main">
-	<article class="post">
-		<div class="inner">
-
-			<section class="post-content">
-				<p>The Dwelling Word is that scripture that abides so richly within us, so deeply and continually, that it captivates our minds and our hearts in every aspect of life. It is that word within us that informs every thought toward Christ, stirs up every affection toward Christ, and drives our will such that every word and every action seeks to glorify Christ.</p><p>TheDwellingWord.org is a collection of projects and initiatives to inspire, encourage, motivate, and teach God's people to know God deeply through knowing God's word richly. We hope you are blessed by the resources that you find here.</p>
-			</section>
-
-		</div>
-	</article>
-</main>
-
-
-
-
-			<div class="nav-footer">
-				<nav class="nav-wrapper" aria-label="Footer">
-					<span class="nav-copy">The Dwelling Word &copy; 2026</span>
-					<span class="nav-center">
-						<span class="nav-mode">
-							<a class="js-theme" href="#" data-system="System" data-dark="Dark" data-light="Light"><span class="theme-icon"></span><span class="theme-text">System</span> </a>
-						</span>
-					</span>
-					<span class="nav-publish">The Dwelling Word &copy; 2026</span>
-				</nav>
-			</div>
-
 		</section>
-	</div>
-
-	<script type="text/javascript" src="https://www.thedwellingword.org/assets/js/script.js?v=107472239f"></script>
-
-	<script>
-	document.addEventListener("DOMContentLoaded", function () {
-		//responsive videos
-		const sources = [
-			'.post-content iframe[src*="youtube.com"]',
-			'.post-content iframe[src*="youtube-nocookie.com"]',
-			'.post-content iframe[src*="player.vimeo.com"]',
-			'.post-content iframe[src*="kickstarter.com"][src*="video.html"]',
-			'.post-content object',
-			'.post-content embed',
-		];
-		reframe(document.querySelectorAll(sources.join(',')));
-	});
-	
-	document.addEventListener("DOMContentLoaded", function () {
-		// Format code blocks and add line numbers
-		function codestyling() {
-			// Select all `pre code` elements
-			document.querySelectorAll('pre code').forEach(function (codeBlock) {
-			// Code highlight
-			hljs.highlightElement(codeBlock);
-
-			// Skip plain text blocks
-			if (!codeBlock.classList.contains('language-text')) {
-				// Calculate the number of lines
-				var lines = codeBlock.innerHTML.split(/\n(?!$)/g).length;
-				if (lines > 1) lines++; // Account for extra line
-
-				// Generate line numbers
-				var numbers = Array.from({ length: lines - 1 }, (_, i) => {
-				return `<span class="line" aria-hidden="true">${i + 1}</span>`;
-				}).join('');
-
-				// Create and append the lines container
-				var linesContainer = document.createElement('div');
-				linesContainer.className = 'lines';
-				linesContainer.innerHTML = numbers;
-				codeBlock.parentNode.appendChild(linesContainer);
-			}
-			});
-		}
-		codestyling();
-	});
-</script>
-
-
-	
-
-</body>
+		
+		<section class="content">
+			<p>This is your temporary landing page. We're working on the full site right now and will have something beautiful ready soon. Thank you for your patience!</p>
+			<p>In the meantime, feel free to reach out if you have any questions. We're excited to share more with you shortly.</p>
+		</section>
+		
+	</body>
 </html>
