@@ -37,13 +37,13 @@
     /* Logo at top-left */
     .logo-container {
       position: absolute;
-      top: 25px;
-      left: 30px;
+      top: 20px;
+      left: 25px;
       z-index: 10;
     }
 
     .logo-container img {
-      max-width: 110px;
+      max-width: 90px;
       height: auto;
       display: block;
     }
@@ -81,12 +81,12 @@
     /* Mobile adjustments – mostly for logo sizing and content spacing */
     @media (max-width: 768px) {
       .logo-container {
-        left: 20px;
+        left: 15px;
         top: 20px;
       }
 
       .logo-container img {
-        max-width: 90px;
+        max-width: 80px;
       }
 
       .content {
@@ -95,8 +95,13 @@
     }
 
     @media (max-width: 480px) {
+      .logo-container {
+        left: 10px;
+        top: 15px;
+      }
+
       .logo-container img {
-        max-width: 80px;
+        max-width: 70px;
       }
     }
   </style>
