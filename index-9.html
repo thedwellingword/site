@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The Dwelling Word</title>
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+
+    /* Hero section – full width, no side cropping, auto height */
+    .hero {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background-color: #f0f0f0;     /* Fallback color while image loads or if edges are transparent */
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;           /* Ensures full image is visible – no cropping */
+      object-position: center;
+    }
+
+    /* Logo at top-left */
+    .logo-container {
+      position: absolute;
+      top: 20px;
+      left: 25px;
+      z-index: 10;
+    }
+
+    .logo-container img {
+      max-width: 90px;
+      height: auto;
+      display: block;
+    }
+
+    /* Optional light overlay for better text readability if you add text over image later */
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.12);   /* Very subtle – increase to 0.2–0.3 if needed */
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Content below hero */
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      text-align: left;
+    }
+
+    .content h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: #222;
+      text-align: center;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      margin-bottom: 1.8rem;
+    }
+
+    /* Mobile adjustments – mostly for logo sizing and content spacing */
+    @media (max-width: 768px) {
+      .logo-container {
+        left: 15px;
+        top: 20px;
+      }
+
+      .logo-container img {
+        max-width: 80px;
+      }
+
+      .content {
+        padding: 40px 20px 60px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo-container {
+        left: 10px;
+        top: 15px;
+      }
+
+      .logo-container img {
+        max-width: 70px;
+      }
+    }
+  </style>
+  </head>
+  <body>
+    
+    <section class="hero">
+      <img 
+        src="Cover.png" 
+        alt="The Dwelling Word cover image" 
+        class="hero-image"
+      >
+      <div class="logo-container">
+        <img src="Logo.png" alt="The Dwelling Word Logo">
+      </div>
+    </section>
+    
+    <section class="content">
+      <p>The Dwelling Word is that scripture that abides so richly within us, so deeply and continually, that it captivates our minds and our hearts in every aspect of life. It is that word within us that informs every thought toward Christ, stirs up every affection toward Christ, and drives our will such that every word and every action seeks to glorify Christ.</p>
+      <p>TheDwellingWord.org is a collection of projects and initiatives to inspire, encourage, motivate, and teach God's people to know God deeply through knowing God's word richly. We hope you are blessed by the resources that you find here.</p>
+    </section>
+    
+  </body>
+</html>
